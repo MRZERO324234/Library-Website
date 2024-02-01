@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {% for field in form %}
+            <tr>
+                <th>{% trans field.label %}</th>
+                <td>{{ field }}</td>
+                <td>{% trans field.help_text %}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <input type="submit" value="{% trans 'Submit' %}">
+</form>
+
+{% endblock %}
+

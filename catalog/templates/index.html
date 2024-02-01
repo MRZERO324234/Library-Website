@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+{% load i18n %}
+
+{% block content %}
+  <html lang="{% get_current_language as language_code %}">
+  <h1>{% trans "Local Library Home" %}</h1>
+
+  <p>{% trans "Discover a world of knowledge at your fingertips with our Local Library website. Immerse yourself in the ever-growing assortment of books that find their home here. Stay updated on the newest additions to our shelves, ensuring you never miss out on the literary treasures that await you." %}</p>
+  <p>{% trans "Whether you're a seasoned bookworm or a casual reader, the Local Library website is designed to cater to your literary interests and keep you connected with the vibrant world of books." %}</p>
+  <p>{% trans "Join us in fostering a love for reading and lifelong learning. Your journey into the captivating realm of literature starts right here, at the heart of your Local Library." %}</p>
+
+  <h2>{% trans "Library content" %}</h2>
+
+  <p>{% trans "The library has the following record counts:" %}</p>
+  <ul>
+    <li><strong>{% trans "Books:" %}</strong> {{ num_books }}</li>
+    <li><strong>{% trans "Copies:" %}</strong> {{ num_instances }}</li>
+    <li><strong>{% trans "Copies available:" %}</strong> {{ num_instances_available }}</li>
+    <li><strong>{% trans "Authors:" %}</strong> {{ num_authors }}</li>
+  </ul>
+
+  <p>{% trans "You have visited this page" %} {{ num_visits }} {% trans "time" %}{{ num_visits|pluralize }}.</p>
+{% endblock %}
