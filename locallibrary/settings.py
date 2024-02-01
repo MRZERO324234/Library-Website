@@ -18,9 +18,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-&psk#na5l=p3q8_a+-$4w1f^lt3lx1c@d*p4x$ymm_rn7pwb87')
 
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['.railway.app','127.0.0.1']
+ALLOWED_HOSTS = ['.railway.app','127.0.0.1','v5643235.pythonanywhere.com']
 
 CSRF_TRUSTED_ORIGINS = ['https://*.railway.app','https://*.127.0.0.1']
 
